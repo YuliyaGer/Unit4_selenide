@@ -15,23 +15,23 @@ public class TestCardForm {
 
     private String dateToUse;
     private String dateToUse2;
-//
-//    @Test
-//    public void registrationForm() {
-//        LocalDate today = LocalDate.now();
-//        LocalDate dateToBe = today.plusDays(3);
-//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-//        dateToUse = dateToBe.format(formatter);
-//        open("http://localhost:9999");
-//        $("[data-test-id=city] input").setValue("Воронеж");
-//        $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
-//        $("[data-test-id=date] input").setValue(dateToUse);
-//        $("[data-test-id=name] input").setValue("Иванов Иван");
-//        $("[data-test-id=phone] input").setValue("+79031273218");
-//        $("[data-test-id=agreement]").click();
-//        $(".button__text").click();
-//        $(withText("Успешно!")).waitUntil(Condition.visible, 15000);
-//    }
+
+    @Test
+    public void registrationForm() {
+        LocalDate today = LocalDate.now();
+        LocalDate dateToBe = today.plusDays(3);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+        dateToUse = dateToBe.format(formatter);
+        open("http://localhost:9999");
+        $("[data-test-id=city] input").setValue("Воронеж");
+        $("[data-test-id=date] input").sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
+        $("[data-test-id=date] input").setValue(dateToUse);
+        $("[data-test-id=name] input").setValue("Иванов Иван");
+        $("[data-test-id=phone] input").setValue("+79031273218");
+        $("[data-test-id=agreement]").click();
+        $(".button__text").click();
+        $(withText("Успешно!")).waitUntil(Condition.visible, 15000);
+    }
 
     @Test
     public void autoRegistrationCard(){
